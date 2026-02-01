@@ -1,6 +1,6 @@
 # 🧬 CRISPR-SAFE 
 
-🔗 **Live App:** https://crispr-safe-rida.streamlit.app
+🔗 **Live App:** https://crispr-safe-awpwpm8hz7ti7buyj4vhpx.streamlit.app/
 
 ### Explainable CRISPR Guide RNA Safety Analysis Tool
 
