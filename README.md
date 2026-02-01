@@ -1,7 +1,9 @@
-# 🧬 CRISPR-SAFE  
+# 🧬 CRISPR-SAFE 
+
+🔗 **Live App:** https://crispr-safe-rida.streamlit.app
+
 ### Explainable CRISPR Guide RNA Safety Analysis Tool
 
-🔗 **Live App:** https://<your-streamlit-app-name>.streamlit.app
 
 
 CRISPR-SAFE is an end-to-end bioinformatics application that designs CRISPR-Cas9 guide RNAs (gRNAs) and evaluates their **off-target risk and editing reliability** using real gene sequences fetched directly from NCBI.
@@ -51,5 +53,31 @@ CRISPR-SAFE integrates both into a **transparent and explainable scoring system*
 
 ---
 
-## 🧮 Scoring Logic (Simplified)
+## 🧮 Scoring Logic
+
+Final Score = Efficiency Score − (Off-Target Hits² × Penalty)
+
+
+CRISPR-SAFE computes a composite safety score by combining **editing efficiency** and **genomic risk**.
+
+### 1. Efficiency Estimation
+- GC content is used as a proxy for gRNA stability and Cas9 binding.
+- Optimal GC range (40–60%) receives the highest efficiency score.
+- Suboptimal GC ranges are penalized.
+
+### 2. Off-Target Risk Modeling
+- Each gRNA is scanned against a background genome sequence.
+- Potential off-target sites are counted using mismatch tolerance.
+- Risk increases **non-linearly** with the number of off-target hits.
+
+### 3. Final CRISPR-SAFE Score
+
+
+This non-linear penalty reflects real biological risk escalation, where a small increase in off-target events can lead to disproportionate genomic damage.
+
+### Risk Labels
+- **SAFE**: Score ≥ 70  
+- **MODERATE RISK**: 40–69  
+- **HIGH RISK**: < 40  
+
 
